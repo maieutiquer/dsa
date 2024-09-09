@@ -8,23 +8,26 @@ import {
   removeFirst,
   addLast,
   map,
+  count,
+  countWhere,
 } from "./singly-linked-list.js"
 
 describe("singly linked list", () => {
   test("from array and to array", () => {
-    const initialArray = [3, 6, 10, 11, 7]
+    const initialArray = [3, 0, 10, 11, 7]
     const linkedListFromArray = fromArray(initialArray)
     const arrayFromLinkedList = toArray(linkedListFromArray)
 
     expect(arrayFromLinkedList).toStrictEqual(initialArray)
-    expect(count).toBe(5)
+    expect(count(linkedListFromArray)).toBe(5)
+    expect(countWhere((x) => x < 10, linkedListFromArray)).toBe(3)
   })
   test("create from value and peak first", () => {
     const initialValue = 42
     const createdList = createFromValue(initialValue)
     const peakedValue = peakFirst(createdList)
     expect(peakedValue).toBe(initialValue)
-    expect(count).toBe(1)
+    expect(count(createdList)).toBe(1)
   })
   test("create from value, add first and peak first", () => {
     const initialValue = 42
@@ -34,7 +37,7 @@ describe("singly linked list", () => {
     const peakedValue = peakFirst(listWithAddedValue)
     expect(peakedValue).toBe(valueToAdd)
 
-    expect(count).toBe(2)
+    expect(count(listWithAddedValue)).toBe(2)
   })
   test("create from value, add last once and peak last", () => {
     const initialValue = 42

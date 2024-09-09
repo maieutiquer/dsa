@@ -1,6 +1,9 @@
 // const singlyLinkedListSample2 = { data: 42, next: null }
 // const singlyLinkedListSample1 = { data: 422, next: singlyLinkedListSample2 }
 
+// helpers
+const T = () => true
+
 export const createEmpty = () => ({ data: null, next: null }) // are empty lists needed?
 export const createFromValue = (value) => ({ data: value, next: null })
 export const peakFirst = ({ data }) => data // is this function redundant?
@@ -35,7 +38,9 @@ export const fromArray = (array) =>
 // const cartesianProduct = () => {}
 // const adjacentDifference = () => {}
 // const adjacentFind = () => {} // use predicate
-export const count = ({ next }) => 1 + (next === null ? 0 : count(next))
+export const countWhere = (predicate, { data, next }) =>
+  (predicate(data) ? 1 : 0) + (next === null ? 0 : countWhere(predicate, next))
+export const count = (handle) => countWhere(T, handle)
 
 export const map = (callbackFn, { data, next }) => ({
   data: callbackFn(data),
