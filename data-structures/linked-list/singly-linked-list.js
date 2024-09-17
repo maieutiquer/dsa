@@ -46,3 +46,13 @@ export const map = (callbackFn, { data, next }) => ({
   data: callbackFn(data),
   next: next === null ? null : map(callbackFn, next),
 })
+
+export const filter = (callbackFn, { data, next }) =>
+  callbackFn(data)
+    ? {
+        data,
+        next: next === null ? null : filter(callbackFn, next),
+      }
+    : next === null
+      ? null
+      : filter(callbackFn, next)
