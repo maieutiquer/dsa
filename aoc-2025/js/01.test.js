@@ -26,7 +26,7 @@ test.each([
 3   3`,
     output: 31,
   },
-  { input: input, output: 0 },
+  { input: input, output: 24316233 },
 ])("p2", ({ input, output }) => {
   expect(p2(input)).toBe(output)
 })
