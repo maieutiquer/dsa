@@ -1,14 +1,32 @@
-import { p1 } from "./01"
+import { p1, p2 } from "./01"
+import { input } from "./01.input"
 
-test.skip.each([
+test.each([
   {
-    input: `32T3K 765
-T55J5 684
-KK677 28
-KTJJT 220
-QQQJA 483`,
-    output: 6440,
+    input: `3   4
+4   3
+2   5
+1   3
+3   9
+3   3`,
+    output: 11,
   },
-])("from array and to array", ({ input, output }) => {
+  { input: input, output: 1666427 },
+])("p1", ({ input, output }) => {
   expect(p1(input)).toBe(output)
+})
+
+test.each([
+  {
+    input: `3   4
+4   3
+2   5
+1   3
+3   9
+3   3`,
+    output: 31,
+  },
+  { input: input, output: 24316233 },
+])("p2", ({ input, output }) => {
+  expect(p2(input)).toBe(output)
 })
