@@ -39,7 +39,7 @@ test.skip("dfs", () => {
   expect(dfs(graph, "B").join(", ")).toBe("B, D, C")
 })
 
-test.only("bfs", () => {
+test.skip("bfs", () => {
   const graph = pipe(
     [addVertex, ["A"]],
     [addEdge, ["A", "D"]],

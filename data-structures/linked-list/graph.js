@@ -63,10 +63,7 @@ export const dfs = (graph, vertex, visited = new Set()) => [
 //           ),
 //         ),
 //       ]
-const activeSegBundles =
-  segBundles?.filter((installation) =>
-    existingInstallationsIds?.some((id) => installation.id === id),
-  ) || []
+
 export const bfs = (
   graph,
   startVertex,
