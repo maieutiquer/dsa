@@ -1,0 +1,6 @@
+[project]
+name = "pyleetcode"
+version = "2024.0.0"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
