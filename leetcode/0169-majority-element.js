@@ -1,6 +1,6 @@
 export const majorityElement = function (nums) {
   const elements = {}
-  let largestNumber = undefined
+  let majorityNumber = undefined
   let largestCount = 0
 
   for (let i = 0; i < nums.length; i += 1) {
@@ -9,9 +9,9 @@ export const majorityElement = function (nums) {
 
     if (numberCount > largestCount) {
       largestCount = numberCount
-      largestNumber = nums[i]
+      majorityNumber = nums[i]
     }
   }
 
-  return largestNumber
+  return majorityNumber
 }
